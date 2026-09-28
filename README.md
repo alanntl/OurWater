@@ -68,7 +68,12 @@ throughout.
 
 The logo keeps the MyWell design (the umbrella catching rain) with the name
 changed, redrawn by an image model from the two MyWell logos.
-`assets/logo/ourwater-logo.png` is the full logo with its tagline, and
-`ourwater-lockup.png` is the compact version in the header and footer.
+`assets/logo/ourwater-logo.png` is the full logo with its tagline.
 `ourwater-mark.png` is the umbrella alone, cut from the full logo, used as the
 favicon and phone app-bar icon.
+
+The header and footer logo, `ourwater-lockup.png`, follows the OurWater
+app-icon badge instead. It shows the umbrella inside a blue ring, then "Our"
+in black and "Water" in blue, with "for Water Sustainability" beneath. It
+appears 46px tall rather than MyWell's 38px so the tagline stays readable, and
+it shrinks on phones to keep Sign in and Get started on its row.

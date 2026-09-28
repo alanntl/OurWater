@@ -62,7 +62,10 @@
          outside the alignment every other section keeps. */
       display: flex; align-items: center; gap: 22px; padding: 10px 20px;
     }
-    .header-row > a img { height: 38px; width: auto; display: block; }
+    /* 46px, not the 38px this header was drawn for: the OurWater logo
+       carries its "for Water Sustainability" line, which needs the height
+       to stay readable. */
+    .header-row > a img { height: 46px; width: auto; display: block; }
     .tabs {
       display: flex; gap: 4px; flex: 1;
       overflow-x: auto; scrollbar-width: none;
@@ -78,7 +81,11 @@
 
     @media (max-width: 760px) {
       .header-row { flex-wrap: wrap; gap: 14px; }
-      .header-row > a { order: 1; }
+      /* The logo (146px wide at 46px) would push the buttons onto a row of
+         their own on a phone. A small flex-basis keeps it beside them; it
+         then grows back toward full size as the width allows. */
+      .header-row > a { order: 1; flex: 1 1 96px; min-width: 0; max-width: 146px; }
+      .header-row > a img { width: 100%; height: auto; }
       .header-cta { order: 2; margin-left: auto; gap: 7px; }
       .tabs { order: 3; flex-basis: 100%; padding-bottom: 6px; }
       .header-cta .btn-small { padding: 7px 12px; }
@@ -354,7 +361,9 @@
     .footer-cols li { margin-bottom: 6px; }
     .footer-cols a { text-decoration: none; }
     .footer-cols a:hover { text-decoration: underline; }
-    .footer-brand img { height: 34px; margin-bottom: 10px; }
+    /* Header size, so the tagline reads; it scales down whole in the phone
+       footer's half-width column. */
+    .footer-brand img { width: 146px; max-width: 100%; height: auto; margin-bottom: 10px; }
     .footer-legal { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .85rem; }
 
     /* Mobile smart bar: open in the app, or stay in the browser */
