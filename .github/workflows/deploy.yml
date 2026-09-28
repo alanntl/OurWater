@@ -27,15 +27,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Build static site
-        run: node scripts/build.mjs
-
-      - name: Verify built output
-        run: node scripts/verify.mjs
+      # OurWater moved to marvi-groundwater/OurWater. This archived original
+      # publishes only forward.html, as both the index and the 404 page, so
+      # every old address (a station QR's /s/?id=… included) forwards to the
+      # same path at the new home. The site sources stay in the repo, unbuilt.
+      - name: Build the forwarding site
+        run: |
+          mkdir -p _site
+          cp forward.html _site/index.html
+          cp forward.html _site/404.html
+          touch _site/.nojekyll
 
       - uses: actions/upload-pages-artifact@v3
         with:

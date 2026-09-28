@@ -1,10 +1,13 @@
 # OurWater — landing site
 
+> **Moved.** OurWater now lives at
+> [marvi-groundwater/OurWater](https://github.com/marvi-groundwater/OurWater)
+> and is live at https://marvi-groundwater.github.io/OurWater/.
+> This repository is the original, archived read-only. Its site address
+> forwards to the new home.
+
 The public front door for OurWater: a single static page, published on
 GitHub Pages, with its content managed through a git-based CMS.
-
-**Live site:** https://alanntl.github.io/OurWater/
-**Content admin (CMS):** https://alanntl.github.io/OurWater/admin/
 
 ## How it fits together
 
