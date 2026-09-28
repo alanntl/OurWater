@@ -81,10 +81,10 @@
 
     @media (max-width: 760px) {
       .header-row { flex-wrap: wrap; gap: 14px; }
-      /* The logo (146px wide at 46px) would push the buttons onto a row of
+      /* The logo (158px wide at 46px) would push the buttons onto a row of
          their own on a phone. A small flex-basis keeps it beside them; it
          then grows back toward full size as the width allows. */
-      .header-row > a { order: 1; flex: 1 1 96px; min-width: 0; max-width: 146px; }
+      .header-row > a { order: 1; flex: 1 1 96px; min-width: 0; max-width: 158px; }
       .header-row > a img { width: 100%; height: auto; }
       .header-cta { order: 2; margin-left: auto; gap: 7px; }
       .tabs { order: 3; flex-basis: 100%; padding-bottom: 6px; }
@@ -363,7 +363,7 @@
     .footer-cols a:hover { text-decoration: underline; }
     /* Header size, so the tagline reads; it scales down whole in the phone
        footer's half-width column. */
-    .footer-brand img { width: 146px; max-width: 100%; height: auto; margin-bottom: 10px; }
+    .footer-brand img { width: 158px; max-width: 100%; height: auto; margin-bottom: 10px; }
     .footer-legal { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .85rem; }
 
     /* Mobile smart bar: open in the app, or stay in the browser */
