@@ -1,0 +1,67 @@
+# OurWater — landing site
+
+The public front door for OurWater: a single static page, published on
+GitHub Pages, with its content managed through a git-based CMS.
+
+**Live site:** https://alanntl.github.io/OurWater/
+**Content admin (CMS):** https://alanntl.github.io/OurWater/admin/
+
+## How it fits together
+
+```
+content/landing.json   ← everything an editor can change (the CMS edits this)
+template.html          ← the page design (layout, styles, animations)
+scripts/build.mjs      ← content + template → _site/index.html
+scripts/verify.mjs     ← refuses to publish a broken build
+admin/                 ← Sveltia CMS (vendored), edits content/ via GitHub
+get/, s/               ← the QR landing pages (install, and open a station)
+.github/workflows/     ← every push to main rebuilds and republishes Pages
+```
+
+Editing flow: open `/admin/`, sign in, change the text, save. The save is a
+commit to `main`; the deploy workflow rebuilds the site from it. Nothing to
+install, no server anywhere.
+
+## Signing in to the CMS
+
+Sveltia is configured with `auth_methods: [token]`: editors sign in with a
+GitHub **fine-grained personal access token** — create one at
+github.com/settings/personal-access-tokens with access to only this
+repository and the **Contents: read and write** permission. Tokens expire
+(GitHub caps them at about a year); when saving stops working, issue a new
+one and sign in again.
+
+## Local development
+
+```
+node scripts/build.mjs && node scripts/verify.mjs
+```
+
+then serve `_site/` (for example `python3 -m http.server --directory _site`).
+No dependencies to install.
+
+## Where the buttons go
+
+OurWater has no app, store listing or domain of its own yet: today it runs
+as a mode of the MyWell app. So the page's working links still point there —
+Sign in and Create account (`https://app.mywell.au`), the Google Play and
+App Store listings, the Android package and App Store id behind the
+open-in-app bar and the iOS banner, the `mywell://` link that bar opens on an
+iPhone, and the tutorial videos, which are hosted with the app. Everything a
+visitor reads says OurWater.
+
+When OurWater gets endpoints of its own:
+
+- **App links** and **App store links** in the CMS (`content/landing.json`)
+  move the page's buttons, banner and smart bar.
+- The tutorial `src`/`poster` URLs are in `content/landing.json` under
+  `tutorials` (not exposed in the CMS form).
+- `get/index.html` and `s/index.html` carry their own copies of the app and
+  store URLs; `template.html` holds the `mywell://` scheme.
+
+## Where it came from
+
+A rebranded copy of the mywell.au landing site
+([marvi-groundwater/mywell](https://github.com/marvi-groundwater/mywell) at
+`2910c17`): the same design, CMS and deploy, with MyWell renamed to OurWater
+throughout and the OurWater logo in place of the MyWell one.
