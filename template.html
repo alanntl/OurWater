@@ -78,11 +78,7 @@
 
     @media (max-width: 760px) {
       .header-row { flex-wrap: wrap; gap: 14px; }
-      /* The OurWater lockup is about twice as wide as the one this header
-         was drawn for. A small flex-basis keeps it on the buttons' row, then
-         it grows back toward full size (189px = 38px tall) as width allows. */
-      .header-row > a { order: 1; flex: 1 1 96px; min-width: 0; max-width: 189px; }
-      .header-row > a img { width: 100%; height: auto; }
+      .header-row > a { order: 1; }
       .header-cta { order: 2; margin-left: auto; gap: 7px; }
       .tabs { order: 3; flex-basis: 100%; padding-bottom: 6px; }
       .header-cta .btn-small { padding: 7px 12px; }
@@ -358,9 +354,7 @@
     .footer-cols li { margin-bottom: 6px; }
     .footer-cols a { text-decoration: none; }
     .footer-cols a:hover { text-decoration: underline; }
-    /* 34px tall at full size; scales down whole (not squashed) when the
-       phone footer's half-width column is narrower than the lockup. */
-    .footer-brand img { width: 169px; max-width: 100%; height: auto; margin-bottom: 10px; }
+    .footer-brand img { height: 34px; margin-bottom: 10px; }
     .footer-legal { margin-top: 26px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .85rem; }
 
     /* Mobile smart bar: open in the app, or stay in the browser */
@@ -400,7 +394,7 @@
   <header>
     <div class="wrap header-row">
       <a href="#home" aria-label="OurWater home">
-        <img src="assets/logo/ourwater-logo.png" alt="OurWater" />
+        <img src="assets/logo/ourwater-lockup.png" alt="OurWater" />
       </a>
       <nav class="tabs" aria-label="Site sections">
         <a class="tab-link" href="#home">Overview</a>
@@ -614,7 +608,7 @@
   <footer>
     <div class="wrap footer-cols">
       <div class="footer-brand">
-        <img src="assets/logo/ourwater-logo.png" alt="OurWater" />
+        <img src="assets/logo/ourwater-lockup.png" alt="OurWater" />
         <p>OurWater for Water Sustainability — a free, community-focused water monitoring and learning app, built on the MARVI approach.</p>
       </div>
       <div>

@@ -64,4 +64,11 @@ When OurWater gets endpoints of its own:
 A rebranded copy of the mywell.au landing site
 ([marvi-groundwater/mywell](https://github.com/marvi-groundwater/mywell) at
 `2910c17`): the same design, CMS and deploy, with MyWell renamed to OurWater
-throughout and the OurWater logo in place of the MyWell one.
+throughout.
+
+The logo keeps the MyWell design (the umbrella catching rain) with the name
+changed, redrawn by an image model from the two MyWell logos.
+`assets/logo/ourwater-logo.png` is the full logo with its tagline, and
+`ourwater-lockup.png` is the compact version in the header and footer.
+`ourwater-mark.png` is the umbrella alone, cut from the full logo, used as the
+favicon and phone app-bar icon.
